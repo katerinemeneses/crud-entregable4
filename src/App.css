@@ -1,38 +1,191 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to right, #eee0e8, #edd9e5, #ebd2e2, #e9cce0, #e7c5de, #e1c5e5, #d9c6eb, #cec8f1, #bad2f9, #aadcf9, #a4e3f1, #aae9e5);
+    color: var(--font-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h3{
+    font-weight: 500;
+    color:rgb(163, 163, 163)
 }
 
-.App-link {
-  color: #61dafb;
+.App{
+    width: 80%;
+    margin-top: 3rem;
+    position: relative;
+    left: 10%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input,
+button{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.usersForm{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.input-container{
+    margin: 10px 5px;
+}
+
+input{
+    background-color: rgb(241, 241, 241);
+    width: 90.7%;
+    padding: 10px 15px;
+    margin: 2%;
+    border: none;
+    border-radius: 10px;
+}
+
+input[id='first_name'],
+input[id='last_name']{
+    width: 43.5%;
+}
+
+.usersForm>button{
+    background-color:#E4AEC5;
+    color: #fff;
+    width: 98%;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.usersForm>button:hover{
+    background-color: hsl(341, 85%, 74%);
+
+}
+
+button[id='cancel']{
+    background-color: hsl(178, 61%, 65%);
+    margin-left: 3%;
+}
+
+button[id='cancel']:hover{
+    background-color: hsl(175, 100%, 86%);
+}
+
+.userCard{
+    position: relative;
+    background-color: #fff;
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.btnsAction{
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 39px);
+}
+
+.btnsAction > button{
+    background-color: #fff;
+    border: none;
+    font-size: 25px;
+    margin: 7px 0;
+}
+
+.fa-trash{
+    color: hsl(266, 100%, 76%);
+}
+
+.selected{
+    background-color: blue;
+}
+
+@media screen and (min-width: 700px) {
+    .UsersList{
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .userCard{
+        width: 45%;
+    }
+
+    input[id='first_name'],
+    input[id='last_name']{
+        width: 44.5%;
+    }
+    
+    input{
+        width: 92.5%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .App{
+        max-width: 1200px;
+        height: 100vh;
+        margin-top: 0;
+        left: 10%;
+    }
+
+    .usersForm{
+        width: 400px;
+        position: fixed;
+        top: calc(50% - 175px)
+    }
+
+    .UsersList{
+        width: calc(100% - 450px);
+        top: 30px;
+    }
+    
+    .usersh2,
+    .UsersList{
+        margin-top: 3rem;
+        position: absolute;
+        left: 450px;
+    }
+
+    .userCard{
+        width: 100%;
+    }
+
+    input[id='first_name'],
+    input[id='last_name']{
+        width: 44%;
+    }
+    
+    input{
+        width: 91.85%;
+    }
+
+    .userdata{
+        display: inline-block;
+        margin: 0 2rem 0 0;
+    }
+
+    .btnsAction{
+        top: calc(50% - 44px);
+    }
+}
+
+@media screen and (min-width: 1530px) {
+    .App{
+        left: calc(50% - 600px);
+    }
 }
